@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意见反馈</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <nav class="header">
+        <div class="title">宿舍管理系统</div>
+        <!-- <div class="login">欢迎李四管理员</div> -->
+    </nav>
+    <div class="catalog">
+        <ul class="cata">
+            <li><a href="/managerIndex">首页</a></li>
+            <li><a href="/managerRepair">宿舍报修</a></li>
+            <li><a href="/leave">离校登记</a></li>
+            <li><a href="/computer">带电脑、行李登记</a></li>
+            <li><a href="/late">晚归登记</a></li>
+            <li><a href="/managerInformationBuy">电费、水费、网费信息</a></li>
+            <li class="nowFocus"><a href="/managerSuggestion">意见反馈</a></li>
+            <li><a href="/studentInformation">学生信息</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="bodyTop">
+            <h1>意见反馈信息</h1>
+        </div>
+        <div class="bodyBottom">
+
+            
+            {{each suggestions}}
+            {{if($value.isProcess == false)}}
+            <div class="opinions">
+                <p class="time">{{$value.date + ' ' + $value.time}}</p>
+                <p class="information">{{$value.text}}</p>
+                <button class="affirm"><a href="/acceptSuggestion?id={{$value._id}}">点击确认</a></button>
+            </div>
+            {{else}}
+            <div class="opinions">
+                <p class="time">{{$value.date + ' ' + $value.time}}</p>
+                <p class="information">{{$value.text}}</p>
+                <button class="affirmed"><a href="javascript:">已确认</a></button>
+            </div>
+                
+              
+            {{/if}}
+            {{/each}}   
+        </div>
+    </div>
+</body>
+</html>

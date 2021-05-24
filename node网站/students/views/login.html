@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <button><a href="/enter">登录</a></button>
+    <form action="/login" method="POST">
+        <fieldset>
+            <legend>注册</legend>
+            <label class="all">
+                学号: <input type="text" autofocus class="normal" placeholder="请输入学号" name="studentId">
+            </label>
+            <label class="all">密码:
+                <input type="password" class="normal" placeholder="请输入密码" name="password">
+            </label>
+            <label class="all">确认:
+                <input type="password" class="normal" placeholder="确认密码" name="confirm">
+            </label>
+            <label class="all">          
+                <input type="submit" value="注册" id="submit">             
+            </label>
+        </fieldset>
+    </form>
+    <p id="warn">{{ warn }}</p>
+</body>
+</html>

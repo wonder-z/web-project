@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/add.css">
+</head>
+<body>
+    <button><a href="/add">增加</a></button>
+    <button><a href="/search">查询</a></button>
+    <button><a href="/list">信息展示</a></button>
+    <!-- id属于地址栏获取，为get方式 -->
+    <form action="/amend?id={{stu._id}}"  method="POST">   
+        <fieldset>
+            <legend>修改信息</legend>
+            <label class="all">
+                学号: <input type="text" autofocus class="normal" placeholder="请输入学号" name="studentId" value="{{ stu.studentId }}" disabled>
+            </label>
+            <label class="all">
+                姓名: <input type="text" class="normal" placeholder="请输入姓名" name="name" value="{{ stu.name }}">
+            </label>
+            <label class="all">
+                学院: <input type="text" class="normal" placeholder="请输入学院" name="college" value="{{ stu.college }}">
+            </label>
+            <label class="all">
+                班级: <input type="text" class="normal" placeholder="请输入班级" name="class" value="{{ stu.class }}">
+            </label>
+            <label class="all">
+                年龄: <input type="text" class="normal" placeholder="请输入年龄" name="age" value="{{ stu.age }}">
+            </label>
+            <label class="all">
+                性别: 
+                {{if (stu.sex == '0')}}
+                <label for="man" class="sex">男</label>
+                <input type="radio" value="0" name="sex" id="man" checked> 
+                <label for="woman" class="sex">女</label>
+                <input type="radio" value="1" name="sex" id="woman"> 
+                {{else if (stu.sex == '1')}}
+                <label for="man" class="sex" >男</label>
+                <input type="radio" value="0" name="sex" id="man"> 
+                <label for="woman" class="sex">女</label>
+                <input type="radio" value="1" name="sex" id="woman" checked> 
+                {{else}}
+                <label for="man" class="sex" >男</label>
+                <input type="radio" value="0" name="sex" id="man"> 
+                <label for="woman" class="sex">女</label>
+                <input type="radio" value="1" name="sex" id="woman"> 
+                {{/if}}
+            </label>
+            <label class="all">
+                <input type="submit" value="修改信息" id="submit">
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>

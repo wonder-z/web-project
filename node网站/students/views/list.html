@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+    <button><a href="/add">增加</a></button>
+    <button><a href="/search">查询</a></button>
+    <button><a href="/list">信息展示</a></button>
+    <!-- <button id="add"><a href="/add">添加学员信息</a></button> -->
+    <table>
+        <caption>学员信息</caption>
+        <tr>
+            <th class="idid">学号</th>
+            <th class="name">姓名</th>
+            <th class="college">学院</th>
+            <th class="class">班级</th>
+            <th class="age">年龄</th>
+            <th class="sex">性别</th>
+            <th class="do">操作</th>
+        </tr>
+        {{each students}}
+        <tr>
+            <th class="idid">{{$value.studentId}}</th>
+            <th class="name">{{$value.name}}</th>
+            <th class="college">{{$value.college}}</th>
+            <th class="class">{{$value.class}}</th>
+            <th class="age">{{$value.age}}</th>
+            <th class="sex">{{$value.sex == '0' ? '男' : '女'}}</th>
+            <th class="do">
+                <button><a href="/amend?id={{$value._id}}">修改</a></button>
+                <button><a href="/remove?id={{$value._id}}">删除</a></button>
+            </th>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+</html>

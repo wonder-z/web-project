@@ -1,0 +1,41 @@
+*{
+    font-size: 62.5%;
+}
+form{
+    width: 32.6rem;
+    margin: 80px auto;
+}
+legend{
+    font-size: 2.2rem;
+    margin-left: 2rem;
+}
+.all{
+    display: block;
+    font-size: 1.8rem;
+    margin: 1.5rem 3rem;
+}
+.sex{
+    font-size: 1.8rem;
+    margin: 1rem 2rem;
+}
+.normal{
+    width: 20rem;
+    height: 22px;
+    font-size: 1.6rem;
+}
+#submit{
+    width: 25.6rem;
+    height: 2.5rem;
+}
+button a{
+    text-decoration: none;
+    color: black;
+    font-size: 13.333px;
+}
+#warn{
+    text-align: center;
+    font-size: 17px;
+    position: absolute;
+    top: 110px;
+    right: 400px;
+}

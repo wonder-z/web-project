@@ -1,0 +1,52 @@
+#add{
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+    top: 32px;
+    right: 120px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    line-height: 2.1;
+    color: white;
+}
+caption{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 18px 0 10px;
+}
+table,tr,th{
+    border: 1px solid black;
+    font-size: 17px;
+    padding: 7px;
+    text-align: center;
+}
+table{
+    border-collapse:collapse;
+    margin: 2px auto;
+}
+.idid{
+    width: 150px;
+}
+.name{
+    width: 150px;
+}
+.college{
+    width: 150px;
+}
+.class{
+    width: 150px;
+}
+.age{
+    width: 60px;
+}
+.sex{
+    width: 60px;
+}
+.do{
+    width: 104px;
+}
+button a{
+    text-decoration: none;
+    color: black;
+}

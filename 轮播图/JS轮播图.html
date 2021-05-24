@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style-type: none;
+    }
+    ul li{
+        float: left;
+    }
+    .div{
+        width: 533px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    ul{
+        width: 3750px;
+        height: 300px;
+        position: relative;
+    }
+    ol{
+        position: absolute;
+        bottom: 13px;
+        left: 15px;
+    }
+    ol li{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255,0.5);
+        float: left;
+        margin: 2px;
+    }
+    .circle{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255,0.5);
+        float: left;
+        margin: 2px;
+    }
+    .left_{
+        width: 16px;
+        height: 26px;
+        background-color: rgba(128, 128, 128, 0.8);
+        position: absolute;
+        top: 45.67%;
+        z-index: 99;
+        line-height: 1.5;
+        cursor: pointer;
+        user-select:none; 
+        display: none;
+    }
+    .right_{
+        width: 16px;
+        height: 26px;
+        background-color: rgba(128, 128, 128, 0.8);
+        position: absolute;
+        left: 517px;
+        top: 45.67%;
+        z-index: 99;
+        line-height: 1.5;
+        cursor: pointer;
+        user-select:none; 
+        display: none;
+    }
+</style>
+<script src="animate函数.js"></script>
+<script>
+    console.log(typeof(NaN));
+    window.addEventListener('load',function(){
+        var left = document.querySelector('.left_');
+        var right = document.querySelector('.right_');
+        var div = document.querySelector('.div');
+        var ol = document.querySelector('ol');
+        var ul = document.querySelector('ul');
+        var imgWidth = div.offsetWidth;
+        var num = 0;
+        var num1 = 0;
+        div.addEventListener('mouseover',function(){
+            left.style.display = 'block';
+            right.style.display = 'block';
+            clearInterval(timer);
+            timer = null;
+        })
+        div.addEventListener('mouseout',function(){
+            left.style.display = 'none';
+            right.style.display = 'none';
+            timer = setInterval(function() {
+                right.click();
+            }, 2000);
+        })
+        for(var i = 0; i < ul.children.length; i++){
+            var li = document.createElement('li');
+            li.setAttribute('index', i);
+            ol.appendChild(li);
+            li.onclick = function(){
+                for(var i = 0; i < ol.children.length; i++){
+                    ol.children[i].className = '';
+                }
+                this.className = 'circle';
+                var index = this.getAttribute('index');
+                num = index;
+                num1 = index;
+                animate(ul, -index * imgWidth);
+            }
+        }
+        ol.children[0].className = 'circle';
+        var first = ul.children[0].cloneNode(true);
+        ul.appendChild(first);
+        right.addEventListener('click',function(){
+            if(num == ul.children.length - 1){
+                ul.style.left = '0';
+                num = 0;
+            }
+            num++;
+            animate(ul, -num*imgWidth);
+            num1++;
+            if(num1 == ol.children.length){
+                num1 = 0;
+            }
+            for(var i = 0; i < ol.children.length; i++){
+                    ol.children[i].className = '';
+            }
+            ol.children[num1].className = 'circle';
+        })
+        left.addEventListener('click',function(){
+            if(num == 0){
+                num = ul.children.length - 1;
+                ul.style.left = -num * imgWidth + 'px';
+            }
+            num--;
+            animate(ul, -num*imgWidth);
+            num1--;
+            if(num1 < 0){
+                num1 = ol.children.length - 1;
+            }
+            for(var i = 0; i < ol.children.length; i++){
+                    ol.children[i].className = '';
+            }
+            ol.children[num1].className = 'circle';
+        })
+        var timer = setInterval(function() {
+            right.click();
+        }, 2000)
+        
+       
+    })
+</script>
+<body>
+    <div class="div">
+        <div class="left_">&lt;</div>
+        <div class="right_">&gt;</div>
+        <ul>
+            <li><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=370347441,2049890238&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2677956604,1956114454&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3757559752,1641039027&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=306288789,2526137423&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2444031136,1156137205&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3536571681,939781296&fm=26&gp=0.jpg" alt=""></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+</body>
+</html>

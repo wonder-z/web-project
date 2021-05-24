@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="星巴克.css">
+    <script type="text/javascript">
+       window.onload=function(){
+			var obtn1=document.getElementById('b4_7');//按钮
+			var obtn2=document.getElementById('b4_8');//按钮
+			var obtn3=document.getElementById('b4_9');//按钮
+			var oDiv1=document.getElementById('b4_21');//要改变长度的盒子
+			var oDiv2=document.getElementById('b4_22');//要改变长度的盒子
+			var oDiv3=document.getElementById('b4_23');//要改变长度的盒子
+            var ooDiv1=document.getElementById('linear_1');
+			var ooDiv2=document.getElementById('linear_2');
+			var ooDiv3=document.getElementById('linear_3');
+			var flag1=true;
+			var flag2=true;
+			var flag3=true;
+
+			obtn1.onclick=function(ev){
+				var oEvent=ev||event;
+				if(flag1){
+                    oDiv1.style.cssText="height:auto;min-height:66px; ";
+                    
+                    obtn1.style.cssText="transform:rotate(180deg);"
+                    ooDiv1.style.cssText="display:none";
+
+					flag1=false;
+				}
+				else{
+                    oDiv1.style.cssText="height:66px; overflow: hidden;";
+                    obtn1.style.cssText="transform:rotate(0deg);"
+                    ooDiv1.style.cssText="display:block";
+    				flag1=true;
+				}
+                oEvent.cancelBubble=true;
+            }
+            obtn2.onclick=function(ev){
+				var oEvent=ev||event;
+				if(flag2){
+                    oDiv2.style.cssText="height:auto;min-height:66px;";
+                    
+                    obtn2.style.cssText="transform:rotate(180deg);"
+                    ooDiv2.style.cssText="display:none";
+
+					flag2=false;
+				}
+				else{
+                    oDiv2.style.cssText="height:66px; overflow: hidden;";
+                    obtn2.style.cssText="transform:rotate(0deg);"
+                    ooDiv2.style.cssText="display:block";
+    				flag2=true;
+				}
+                oEvent.cancelBubble=true;
+            }
+            obtn3.onclick=function(ev){
+				var oEvent=ev||event;
+				if(flag3){
+                    oDiv3.style.cssText="height:auto;min-height:66px;";
+                    
+                    obtn3.style.cssText="transform:rotate(180deg);"
+                    ooDiv3.style.cssText="display:none";
+
+					flag3=false;
+				}
+				else{
+                    oDiv3.style.cssText="height:66px; overflow: hidden;";
+                    obtn3.style.cssText="transform:rotate(0deg);"
+                    ooDiv3.style.cssText="display:block";
+    				flag3=true;
+				}
+                oEvent.cancelBubble=true;
+            }
+            var obtn4=document.getElementById('left_a');//按钮
+			var obtn5=document.getElementById('left2_a');//按钮
+			var oDiv4=document.getElementById('left');
+			var oDiv5=document.getElementById('left2');
+
+			// var flag4=true;
+			// var flag5=true;
+
+			obtn4.onclick=function(ev){
+				var oEvent=ev||event;
+				// if(flag4){
+                    oDiv4.style.cssText="display:none";
+                    
+                    oDiv5.style.cssText="display:block";
+				// 	flag4=false;
+				// }
+				// else{
+                //     oDiv4.style.cssText="height:66px; overflow: hidden;";
+    			// 	obtn4.style.cssText="transform:rotate(0deg);"
+    			// 	flag4=true;
+				// }
+                // oEvent.cancelBubble=true;
+            }
+            obtn5.onclick=function(ev){
+				var oEvent=ev||event;
+				// if(flag5){
+                    oDiv4.style.cssText="display:block";
+                    
+                    oDiv5.style.cssText="display:none";
+
+				// 	flag5=false;
+				// }
+				// else{
+                //     oDiv5.style.cssText="height:66px; overflow: hidden;";
+    			// 	obtn5.style.cssText="transform:rotate(0deg);"
+    			// 	flag5=true;
+				// }
+                // oEvent.cancelBubble=true;
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="left" style="opacity: 1;">
+        <div id="left_1">
+            <a href="#"><img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg" alt="logo" id="l_img1"></a>
+            <ul>
+            <li class="left_l"><a href="#">门店</a></li>
+            <li class="left_l"><a href="#">我的账户</a></li>
+            <li class="left_l"><a href="#">菜单</a></li>
+            </ul>
+            <a id="left_a" style="cursor: pointer;"><img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-hamburger.svg" alt=""></a>
+        </div>
+            <div id="left_2">
+            <div id="title">关于星巴克</div>
+            <ul>
+                <li><a href="#">星巴克在中国</a></li>
+                <li class="left_21"><a href="#">工作机会</a></li>
+                <li class="left_21"><a href="#">企业新闻</a></li>
+                <li class="left_21"><a href="#">社会责任</a></li>
+                <li class="left_21"><a href="#">历史回顾</a></li>
+                <li class="left_21"><a href="#">联系我们</a></li>
+            </ul>
+            </div>
+    </div>
+    
+    <div id="right">
+        <div id="right_1">
+            <div id="right_2">
+                <div>
+                <h1>星巴克在中国</h1>
+                <p>我们希望通过每一杯咖啡，将星巴克的咖啡传承与独特的咖啡体验带给我们的顾客。</p>
+            </div>
+            </div>
+        </div>
+        <div id="r_body1">
+            <div class="b1_1" id="b1_11">
+                <a href="#">历史</a>
+                <div class="b1_2">
+                    <div class="b1_3" id="b1_31">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-opennow.svg" alt="">
+                        <p class="b1_5">1999</p>
+                        <p class="b1_6">星巴克内地第一家门店</p>
+                    </div>
+                    <div class="b1_4" id="b1_41">
+                        <p>星巴克于1999年1月，在北京中国国际贸易中心开设中国内地第一家门店。对星巴克来说，中国目前已成为星巴克发展速度最快、最大的海外市场。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="b1_1" id="b1_12">
+                <a href="#">门店</a>
+                <div class="b1_2">
+                    <div class="b1_3" id="b1_32">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-pin.svg" alt="">
+                        <p class="b1_5" >4,300</p>
+                        <p class="b1_6">多家门店遍布中国内地180个城市</p>
+                       
+                    </div>
+                    <div class="b1_4" id="b1_42">
+                        <p>目前，星巴克已经在中国内地180个城市开设了超过4,300家门店，拥有58,000多名星巴克伙伴。这一独特优势使我们能够在每一天，通过每一家星巴克门店，践行我们的承诺。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="b1_1" id="b1_13">
+                <a href="#">社会责任</a>
+                <div class="b1_2">
+                    <div class="b1_3" id="b1_33">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-history.svg" alt="">
+                        <p class="b1_5">1,000,000</p>
+                        <p class="b1_6">小时社区服务</p>
+                    </div>
+                    <div class="b1_4" id="b1_43">
+                        <p>进入中国以来，星巴克始终致力于回馈社会，持续在中国内地不同地区和城市开展企业社会责任项目，对于当地社会发展做出自己的一份贡献。自2011年起，星巴克中国的伙伴和志愿者们一共贡献了超过100万小时的社区服务，增进了与社区和顾客的情感联系。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="r_body2">
+            <div id="b2_1">
+                <h2>我们的使命和价值观</h2>
+                <div id="b2_2">
+                    <p>激发并孕育人文精神，每人，每杯，每个社 &nbsp; 区。</p>
+                    <p>以我们的伙伴、咖啡和顾客为核心，我们努力 践行以下价值观：</p>
+                    <ul>
+                        <li>营造一种温暖而有归属感的文化，欣然接纳和欢迎每一个人。</li>
+                        <li>积极行动，勇于挑战现状，打破陈规，以创新方式实现公司与伙伴的共同成长。</li>
+                        <li>在每个连接彼此的当下，我们专注投入，开诚相见，互尊互敬。</li>
+                        <li>对于每件事，我们都竭尽所能，做到最好，敢于担当。</li>
+                    </ul>
+                    <a href="#" class="b2_3">加入我们</a>
+                </div>
+                <div id="b2_4">
+                    <img src="https://www.starbucks.com.cn/images/pages/starbucksinchina.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="r_body3">
+            <div id="b3_1">
+                <h2>最新新闻</h2>
+                <ul>
+                    <li>
+                        <a href="#" class="b3_2" id="b3_21"><img src="https://www.starbucks.com.cn/images/posts/2020-06-03-poster.jpg" alt="" ;>
+                        <div class="b3_3" id="b3_31">
+                            <h3>咖啡让世界认识云南，阅读让云南儿童延展梦想</h3>
+                            <h3 class="b3_h3">星巴克启动“读出未来”阅读助学项目</h3>
+                            <p>6月1日，云南 - 这个儿童节对于云南普洱、保山的乡村儿童来说有些不一样，他们将在班级里拥有阅读图书角，读上好书，看上绘本——这可能是最好的儿童节礼物。当天，星巴克宣布通过赠与亚洲定向捐赠约550万人民币，携手公益组织“担当者行动”在云南启动“读出未来”阅读助学项目。
+
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#" class="b3_2" id="b3_22"><img src="https://www.starbucks.com.cn/images/posts/2020-05-25-poster.jpg" alt="">
+                        <div class="b3_3" id="b3_32">
+                            <h3>赋能乡村妈妈，助力非遗传承</h3>
+                            <h3 class="b3_h3">星巴克联合中国妇女发展基金会启动“乡村妈妈加速计划”</h3>
+                            <p>5月18日，北京 — 今日，星巴克宣布携手中国妇女发展基金会（以下简称“妇基会”）共同启动“星巴克乡村妈妈加速计划”文化扶贫项目。星巴克将通过赠与亚洲（Give2Asia）定向捐赠约700万人民币，计划在3年内为超过1500名贫困乡村妈妈提供22000余次专项技能培训，提升传统手工技艺、实现居家就业创业，在助力振兴乡村经济发展的同时，积极推动中国非物质...</p>
+                        </div></a>
+                    </li>
+                    <li>
+                        <a href="#" class="b3_2" id="b3_23"><img src="https://www.starbucks.com.cn/images/posts/2020-05-08-poster.png" alt="">
+                        <div class="b3_3" id="b3_33">
+                           <h3>星巴克中国首推全新精品咖啡品类“威士忌桶酿咖啡”</h3>
+                           <h3 class="b3_h3">开启桶酿咖啡时代</h3>
+                           <p>4月28日，星巴克历时多年打造的创新咖啡品类——臻选威士忌桶酿咖啡系列正式登陆中国内地市场。</p>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+                <a href="#" class="b2_3" id="b3_a">加入我们</a>
+            </div>
+            
+        </div>
+        <div id="r_body4">
+            <div id="b4_1">
+                <h2 id="b4_3">关于我们</h2>
+                <ul>
+                <li class="b4_2" id="b4_21" >
+                    <h2>背景</h2>
+                    <div class="b4_10" id="b4_7"></div>
+                    <div>
+                        <p>自1999年进入中国以来，秉承“激发并孕育人文精神——每人、每杯、每个社区”的公司使命，我们始终致力于发展成为一家与众不同的公司：在传承经典咖啡文化的同时，关爱我们的伙伴，为顾客提供超越期望的星巴克体验，并为所在社区的繁荣做出自己的贡献。目前，星巴克已经在中国内地180个城市开设了超过4,300家门店，拥有58,000多名星巴克伙伴。这一独特优势使我们能够在每一天，通过每一家星巴克门店，践行我们的承诺。</p>
+                    </div>
+                    <div id="linear_1"></div>
+                </li>
+               
+                <li class="b4_2" id="b4_22" >
+                    <h2>高品质的星巴克咖啡</h2>
+                    <div class="b4_10" id="b4_8"></div>
+                    <div>
+                        <p>我们热爱我们的咖啡。我们相信通过一杯高品质的手工咖啡可以传递和分享真挚情感，而这样简单的行为或许可以为顾客提供一些正能量。因此，星巴克始终致力于通过道德采购，烘焙并提供高品质的阿拉比卡咖啡豆。我们还在中国云南普洱建立了星巴克中国咖啡种植者支持中心，旨在整合和促进可持续种植规范在当地的推广，助力云南咖啡产业的发展。从一粒种子到一杯咖啡，每一个环节都倾入了星巴克的心意和努力，只为每一次光顾我们门店的顾客可以享受醇香的浓缩咖啡及其钟爱的咖啡饮品。</p>
+                    </div>
+                    <div id="linear_2"></div>
+                </li>
+                <li class="b4_2" id="b4_23" >
+                    <h2>独一无二的星巴克体验</h2>
+                    <div class="b4_10" id="b4_9"></div>
+                    <div>
+                        <p>我们热爱我们的顾客。星巴克一直致力于为顾客提供始终如一的优质星巴克体验。同时，在对产品质量和服务精益求精的基础上，星巴克强调创新，强调产品和服务的个性化，强调不断给顾客带来愉悦和惊喜。星巴克也充分尊重中国历史悠久的传统文化，在门店设计、地方食品和饮料供应等方面，完美地将当地习俗融合到星巴克体验之中。目前，我们在中国开设了7家向我们的咖啡传承致敬的旗舰店，它们分别位于北京嘉里中心、北京太古里、成都太古里、上海迪士尼度假区、深圳万象天地、苏州中心和北京坊。独特的星巴克数字平台，包括星巴克移动应用软件和星享俱乐部，帮助我们在门店以外建立与顾客的连接。星巴克始终致力于通过不断创新，建立我们和顾客之间的情感连接，同时激发他们在店内店外与更多人分享这些美好瞬间。2015年12月，星巴克推出天猫官方旗舰店，将独特的门店体验与线上“第四空间”体验紧密对接，这是星巴克第一个“互联网+咖啡”的心意传递平台。2016年12月，星巴克宣布与腾讯达成战略合作，在中国领先的移动社交应用——微信上推出创新的社交礼品体验“用星说”，借此鼓励和激发数字时代的情感连接。此外，为了进一步满足中国消费者多样化的支付需求，星巴克中国门店已全面接入微信和支付宝。2018年8月，星巴克宣布与阿里巴巴集团达成新零售全面战略合作，通过一系列基于新零售的探索创新给中国的消费者带来更多惊喜。9月，星巴克官方线上订餐平台专星送™正式上线，通过星巴克APP和饿了么两大平台为顾客带来“用心，更多一度”的星巴克外送体验。
+                        </p>
+                    </div>
+                    <div id="linear_3"></div>
+                </li>
+                </ul>
+            </div>        
+        </div>
+        <div id="foot">
+            <div></div>
+        </div>
+    </div>
+    <div id="left2" style="display: none;">
+        <div id="left2_1">
+            <a href="#"><img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg" alt="logo" id="l2_img1"></a>
+            <a id="left2_a" style="cursor: pointer;"><img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-close.svg" alt=""></a>
+            <ul id="left2_ul1">
+                <li><a href="#">门店</a></li>
+                <li><a href="#">星享俱乐部</a></li>
+                <li><a href="#">菜单</a></li>
+                <hr> 
+                <li><a href="#">星巴克移动应用</a></li>
+                <li><a href="#">星礼卡</a></li>
+                <li><a href="#">星巴克臻选™
+                  </a></li>
+                <li><a href="#">啡快™ - 在线点 到店取</a></li>
+                <li><a href="#">专星送™</a></li>
+                <li><a href="#">咖啡星课堂</a></li>
+                <li><a href="#">上海烘培工坊</a></li>
+                <li><a href="#">关于星巴克</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <hr>
+            </ul>
+            <div id="left2_div1">
+                <a href="#"><img src="https://www.starbucks.com.cn/assets/icons/icon-account.svg" alt=""></a>
+                <a href="#">登录</a>
+                <a href="#" id="left2_div1_a3">注册</a>
+            </div>
+            <div id="left2_div2">
+                <a href="#">English</a> <span>|</span>
+                <a href="#">隐私政策</a> <span>|</span>
+                <a href="#">使用条款</a>
+            </div>
+           </div> 
+    </div>
+</body>
+</html>
+
+
+
+
+

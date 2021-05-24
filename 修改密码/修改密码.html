@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        form{
+            width: 50%;
+            margin: 100px 600px 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        label{
+            text-align: left;
+        }
+        input{
+            margin: 10px 30px;
+        }
+        #confirm{
+            margin-left: 0px;
+        }
+        #btn{
+            margin-top: 20px;
+            margin-left: 750px;
+        }
+        p{
+            display: inline-block;
+            margin-left: 20px;
+            position: relative;
+        }
+        p img{
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: -30px;
+            top: -4px;
+        }
+        .error{
+            color: red;
+        }
+        .true{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p><span class="glyphicon glyphicon-remove-sign"></span></p> -->
+    <h1>修改密码</h1>
+    <form>
+        <label for="邮箱">用户名：</label>
+        <input type="text" name="用户名" id="user" disabled 					
+        placeholder="name">
+        <p></p>
+        </br> 
+        <!-- <img src="image/错号.png" alt="error">  -->
+        <label for="旧密码">旧密码：</label>
+        <input type="password" name="旧密码" id="old">
+        <p></p>
+        <!-- <img src="image/对号.png" alt="true"> 格式正确 -->
+        </br>
+        <label for="新密码">新密码：</label>
+        <input type="password" name="新密码" id="newPass">
+        <p></p>
+         </br>
+        <label for="新密码确认">新密码确认：</label>
+        <input type="password" name="新密码确认" id="confirm">
+        <p></p>
+        </br>
+        <label for="电话">电 &nbsp; &nbsp;话：</label>
+        <input type="text" name="电话" id="phone">
+        <p></p>
+        </br>
+        <label for="邮箱">邮 &nbsp; &nbsp;箱：</label>
+        <input type="text" name="邮箱" id="email">
+        <p></p>
+        </br>    
+    </form>
+    <button id="btn">确&nbsp; &nbsp;定</button>
+    <script>
+        var old = document.getElementById("old");
+        var newPass = document.getElementById("newPass");
+        var confirm = document.getElementById("confirm");
+        var phone = document.getElementById("phone");
+        var email = document.getElementById("email");
+        var btn = document.getElementById("btn");
+        var form = document.querySelector("form");
+        var regKong = /^\s*$/;
+        var regPass = /^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z]{6,}$/;
+        var regPhone = /^1[3|4|5|8][0-9]{9}$/;
+        var regEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        function kong (object){
+            if(regKong.test(object.value)){
+                object.nextElementSibling.innerHTML= '<img src="image/错号.png" alt="error">不能为空';
+                object.nextElementSibling.className = 'error';
+                return 0;
+            }
+            else return 1;
+        }
+        function del (object){
+            object.nextElementSibling.innerHTML= '';
+        }
+        function regb(reg,object){
+            if(reg.test(object.value)){
+                object.nextElementSibling.innerHTML= '<img src="image/对号.png" alt="true">格式正确';
+                object.nextElementSibling.className = 'true';
+            }
+            else{
+                object.nextElementSibling.innerHTML= '<img src="image/错号.png" alt="error">格式不正确';
+                object.nextElementSibling.className = 'error';
+            }
+        }
+        btn.addEventListener("click", function(){
+            let flag1 = kong(old);
+            let flag2 = kong(newPass);
+            let flag3 = kong(confirm);
+            let flag4 = kong(phone);
+            let flag5 = kong(email);
+            if (flag1==1)
+            {
+                if(old.value != 'test1234'){
+                    old.nextElementSibling.innerHTML= '<img src="image/错号.png" alt="error">旧密码不正确';
+                    old.nextElementSibling.className = 'error';
+                }
+                else{
+                    old.nextElementSibling.innerHTML= '<img src="image/对号.png" alt="true">旧密码正确';
+                    old.nextElementSibling.className = 'true';
+                }
+            }
+            if (flag2==1)
+            {
+                regb(regPass, newPass);
+            }
+            if (flag3==1)
+            {
+                regb(regPass, confirm);
+            }    
+            if(regPass.test(newPass.value) && regPass.test(confirm.value)){
+                if(newPass.value != confirm.value){
+                    newPass.nextElementSibling.innerHTML= '<img src="image/错号.png" alt="error">格式正确，但两次密码不一致';
+                    newPass.nextElementSibling.className = 'error';
+                    confirm.nextElementSibling.innerHTML= '<img src="image/错号.png" alt="error">格式正确，但两次密码不一致';
+                    confirm.nextElementSibling.className = 'error';
+                    }
+                else{
+                    newPass.nextElementSibling.innerHTML= '<img src="image/对号.png" alt="true">格式正确，且两次密码一致';
+                    newPass.nextElementSibling.className = 'true';
+                    confirm.nextElementSibling.innerHTML= '<img src="image/对号.png" alt="true">格式正确，且两次密码一致';
+                    confirm.nextElementSibling.className = 'true';
+                }       
+            }
+            if (flag4==1)
+            {
+                regb(regPhone, phone);
+            }
+            if (flag5==1)
+            {
+                regb(regEmail, email);
+            }
+            if(old.value == 'test1234' && regPass.test(newPass.value) && regPass.test(confirm.value) &&newPass.value == confirm.value && regPhone.test(phone.value) && regEmail.test(email.value))
+            {
+                del(old);
+                del(newPass);
+                del(confirm);
+                del(phone);
+                del(email);
+                alert("密码修改成功");
+                
+            }
+            
+        })
+        
+    </script>
+</body>
+</html>

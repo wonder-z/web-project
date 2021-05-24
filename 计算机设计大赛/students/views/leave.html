@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离校登记</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+
+<body>
+    <nav class="header">
+        <div class="title">宿舍管理系统</div>
+        <!-- <div class="login">欢迎XXX</div> -->
+    </nav>
+    <div class="catalog">
+        <ul class="cata">
+            <li><a href="/managerIndex">首页</a></li>
+            <li><a href="/managerRepair">宿舍报修</a></li>
+            <li class="nowFocus"><a href="/leave">离校登记</a></li>
+            <li><a href="/computer">带电脑、行李登记</a></li>
+            <li><a href="/late">晚归登记</a></li>
+            <li><a href="/managerInformationBuy">电费、水费、网费信息</a></li>
+            <li><a href="/managerSuggestion">意见反馈</a></li>
+            <li><a href="/studentInformation">学生信息</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="bodyTop">
+            <h1>离校登记信息</h1>
+            <form action="/newLeave" method="GET"><button class="add">添加</button></form>
+        </div>
+        <div class="bodyBottom">
+            <table class="leaveTable" cellspacing="0">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>宿舍号</th>
+                    <th>离校时间</th>
+                    <th>操作</th>
+                </tr>
+                {{each leaves}}
+                <tr>
+                    <td>{{$value.number}}</td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.room}}</td>
+                    <td>{{$value.date}} {{$value.time}}</td>
+                    <td>
+                        <a href="/delLeave?_id={{$value._id}}" class="del">删除</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

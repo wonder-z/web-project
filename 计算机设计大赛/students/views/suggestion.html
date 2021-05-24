@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宿舍报修添加</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <nav class="header">
+        <div class="title">宿舍管理系统</div>
+        <!-- <div class="login">欢迎XXX</div> -->
+    </nav>
+    <div class="catalog">
+        <ul class="cata">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/showRepair">宿舍报修</a></li>
+            <li><a href="/stuLeave">离校登记</a></li>
+            <li><a href="/stuCom">带电脑、行李登记</a></li>
+            <li><a href="/stuLate">晚归登记</a></li>
+            <li><a href="/informationBuy">电费、水费、网费信息</a></li>
+            <li class="nowFocus"><a href="/showSuggestion">意见反馈</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="bodyTop">
+            <h1 class="addTitle">意见反馈信息</h1>
+        </div>
+        <div class="bodyBottom">
+            <form class="informationAdd" action="/suggestion" method="POST">
+                <h3>日期</h3>
+                <input type="date" name="date"><br>
+                <input type="time" name="time">
+                <h3>信息概述</h3>
+                <textarea name="text" cols="30" rows="10"></textarea>
+                <br>
+                <input class="del" type="submit" value="添加">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

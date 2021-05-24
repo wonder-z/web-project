@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background:url(../picture/background.PNG)  no-repeat center center;
+    background-size:cover;
+    background-attachment:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+#student{
+    border-bottom: 1px solid black;
+}
+#student:hover{
+    border-bottom: 1px solid black;
+}
+#admin:hover{
+    border-bottom: 1px solid black;
+}
+.box{
+    opacity: 0.9;
+    background-color: white;
+    width: 60%;
+    padding: 50px 0px;
+    text-align: center;
+    box-shadow:2px 2px 20px 2px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:100px;
+}
+#adm{
+    display: none;
+}
+input{
+    border:none;
+    border-bottom: 1px solid black;
+    height: 30px;
+    width:100%;
+    margin: 30px 0;
+    padding: 0 5%;
+}
+.sex{
+    height: 15px;
+    width: 36%;
+    margin: 10px 0;
+    padding: 0 ; 
+}
+input:focus{
+    outline: none;
+}
+.title{
+    color: black;
+    font-size: large;
+    font-size: 25px;
+    padding: 40px 0;
+}
+form{
+    margin: 10px auto;
+    width: 60%;
+    color:rgba(12, 10, 10, 0.719) ;
+}
+.enter{
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid  #377e37;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #377e37;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+.enter:focus{
+    outline: none;
+}
+.sign{
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid  #377e37;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #377e37;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 0;
+}
+.sign:focus{
+    outline: none;
+}

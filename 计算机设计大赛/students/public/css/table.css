@@ -1,0 +1,131 @@
+.leaveTable{
+    width: 85%;
+    text-align: center;
+    height: 100%;
+}
+.leaveTable td{
+    padding: 10px 0;
+    border-bottom: gainsboro 1px solid;
+}
+.leaveTable th{
+    padding: 10px 0;
+    border-bottom: gainsboro 2px solid;
+}
+.opinions{
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    border: gainsboro 2px solid;
+    color: rgb(94, 93, 93);
+    position: relative;
+}
+.opinions:hover{
+    box-shadow:2px 2px 10px 2px rgba(0,0,0,0.3);
+}
+.affirm{
+    color: white;
+    background-color: #3669FF;
+    border:#3669FF 1px solid ;
+    padding: 6px;
+    border-radius: 18px;
+    font-size: 15px;
+    margin: 10px ;
+    float: right;
+}
+.affirm:focus{
+    outline: none;
+}
+.time{
+    float: left;
+    padding: 10px;
+}
+.information{
+    position: absolute;
+    width: 230px;
+    top: 60px;
+    margin: 10px;
+}
+
+.addTitle{
+    position: relative;
+    left: 8%;
+    width: 60%;
+}
+.informationAdd{
+    width: 60%;
+    position: relative;
+    left: 8%;
+}
+.informationAdd input{
+    width: 350px;
+    height: 35px;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-size: 17px;
+    border: 1px solid rgb(172, 171, 171);
+}
+
+.informationAdd input:focus{
+    outline:#3668ffbd;
+}
+.informationAdd textarea{
+    width: 370px;
+    height: 250px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    font-size: 17px;
+    border: 1px solid rgb(172, 171, 171);
+}
+
+.informationAdd textarea:focus{
+    outline:#3668ffbd;
+}
+/* 新加的 */
+.affirmed{
+    color: white;
+    background-color: #2c4daf;
+    border:#2c4daf 1px solid ;
+    padding: 6px;
+    border-radius: 18px;
+    font-size: 15px;
+    margin: 10px ;
+    float: right;
+}
+.notice{
+    width:500px;
+    height: 350px;
+    margin: 20px 20px 20px 0;
+    border: gainsboro 2px solid;
+    color: rgb(94, 93, 93);
+    position: relative;
+}
+.notice:hover{
+    box-shadow:2px 2px 10px 2px rgba(0,0,0,0.3);
+}
+.informationB{
+    width:500px;
+    height: 350px;
+    margin: 20px 20px 20px 0;
+    border: gainsboro 2px solid;
+    color: rgb(94, 93, 93);
+    position: relative;
+    border-radius: 10px;
+}
+.informationB:hover{
+    box-shadow:2px 2px 10px 2px rgba(0,0,0,0.3);
+}
+.informationN{
+    position: absolute;
+    width: 470px;
+    margin: 20px;
+    font-size: 17px;
+}
+#man{
+    width: 20px;
+    height: 20px;
+}
+#woman{
+    width: 20px;
+    height: 20px;
+    margin: 10px 0 10px 100px;
+}

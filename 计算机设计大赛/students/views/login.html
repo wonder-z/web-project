@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">管理员注册</div>
+        <form action="/loginAndRegister" method="post">
+            <input type="text" placeholder="工号" name="number">
+            <input type="name" placeholder="姓名" name="name">
+            性别<input class="sex" type="radio" value="0" name="sex">男<input class="sex" type="radio" value="1"
+                name="sex">女
+            <input type="text" placeholder="手机号码" name="phone">
+            <input type="password" placeholder="密码" class="m" name="password">
+            <input type="password" placeholder="确认密码" class="m">
+            <button type="submit" class="enter">注册并登录</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

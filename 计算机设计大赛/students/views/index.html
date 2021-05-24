@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <nav class="header">
+        <div class="title">宿舍管理系统</div>
+        <div class="login">欢迎{{studentName}}同学</div>
+    </nav>
+    <div class="catalog">
+        <ul class="cata">
+            <li class="nowFocus"><a href="/index">首页</a></li>
+            <li><a href="/showRepair">宿舍报修</a></li>
+            <li><a href="/stuLeave">离校登记</a></li>
+            <li><a href="/stuCom">带电脑、行李登记</a></li>
+            <li><a href="/stuLate">晚归登记</a></li>
+            <li><a href="/informationBuy">电费、水费、网费信息</a></li>
+            <li><a href="/showSuggestion">意见反馈</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="bodyTop">
+            <h1>公告</h1>
+        </div>
+        <div class="bodyBottom">
+                {{each notices}}
+                    <div class="notice">
+                        <p class="informationN">
+                            {{$value.text}}
+                        </p>
+                        <p class="timeOne">{{$value.date + ' ' + $value.time}}</p>
+                    </div>
+                {{/each}}
+        </div>
+    </div>
+</body>
+</html>

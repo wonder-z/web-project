@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="记事本.css">
+</head>
+<body>
+    <h1>辣鸡记事本</h1>
+    <div id="header">
+    <input type="text" id="content">
+    <input type="submit" value="提交" id="submit">
+    </div>
+    <div id="main">
+        <ul>
+            <!-- <li class="point">
+                <p class="point_p" data-note="1">note</p>
+                <a href="javascript:;" class="point_a">X</a>
+                <div class="point_div">
+                    <textarea readonly="false"></textarea>
+                </div>
+                </li> -->
+        </ul>
+    </div>
+    <script>
+        var submit = document.getElementById('submit');
+        var content = document.getElementById('content');
+        var ul = document.querySelector('ul');
+        var gr = /[^ +$]/;
+        content.onfocus = function(){
+            document.onkeyup = function(e){
+                if(e.keyCode === 13){
+                    if(!gr.test(content.value)){
+                        alert('内容不能为空');
+                    }
+                    else{
+                        var li = document.createElement('li');
+                        li.className = 'point';
+                        li.innerHTML = '<p class="point_p" data-note="1"></p><a href="javascript:;" class="point_a">X</a><div class="point_div"><textarea readonly="readonly">' + content.value + '</textarea></div>';
+                        ul.appendChild(li);
+                        var ps = document.querySelectorAll('.point_p');
+                        ps[ps.length-1].innerHTML = 'note   ' + ps.length + '';
+                        var as = document.querySelectorAll('.point_a');
+                        for(var i = 0; i < as.length; i++){  
+                            as[i].onclick = function(){
+                                ul.removeChild(this.parentNode);
+                                var ps = document.querySelectorAll('.point_p');
+                                for(var k = 0; k < ps.length; k++){
+                                    console.log(k+1);
+                                    var n = k + 1;
+                                    ps[k].innerHTML = 'note   ' + n + '';
+                                }  
+                            }                
+                        } 
+                        var text = document.querySelectorAll('textarea');
+                        var texta;
+                        var textar;
+                        for(var j = 0; j < text.length; j++){  
+                            text[j].ondblclick = function(){
+                                this.removeAttribute('readonly');
+                                this.style.textAlign = ('left');
+                                this.style.cursor = 'text';
+                            }
+                        }
+                        for(m = 0; m < text.length; m++){ 
+                            text[m].onfocus = function(){
+                                    texta = this;
+                                    document.onkeydown = function(en){
+                                    if(en.keyCode === 13){
+                                        if(!gr.test(texta.value)){
+                                            alert('内容不能为空');
+                                        }
+                                        else
+                                        {
+                                            texta.readOnly = 'true';
+                                            texta.style.textAlign = ('center');
+                                            texta.style.cursor = 'default';
+                                        }
+                                    }
+                                }
+                        }
+                        for(var l = 0; l < text.length; l++){  
+                            text[l].onblur = function(){
+                                textar = this;
+                                document.onkeydown = function(en){
+                                    if(en.keyCode === 13){
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+        content.onblur = function(){
+            document.onkeyup = function(e){
+                if(e.keyCode === 13){
+                    return;
+                }
+            }
+        }  
+        submit.onclick = function(){
+            if(!gr.test(content.value)){
+                alert('内容不能为空');
+            }
+            else{
+                var li = document.createElement('li');
+                li.className = 'point';
+                li.innerHTML = '<p class="point_p" data-note="1"></p><a href="javascript:;" class="point_a">X</a><div class="point_div"><textarea readonly="readonly">' + content.value + '</textarea></div>';
+                ul.appendChild(li);
+                var ps = document.querySelectorAll('.point_p');
+                ps[ps.length-1].innerHTML = 'note   ' + ps.length + '';
+                var as = document.querySelectorAll('.point_a');
+                for(var i = 0; i < as.length; i++){  
+                    as[i].onclick = function(){
+                        ul.removeChild(this.parentNode);
+                        var ps = document.querySelectorAll('.point_p');
+                        for(var k = 0; k < ps.length; k++){
+                            console.log(k+1);
+                            var n = k + 1;
+                            ps[k].innerHTML = 'note   ' + n + '';
+                        }  
+                    }                
+                } 
+                var text = document.querySelectorAll('textarea');
+                var texta;
+                var textar;
+                for(var j = 0; j < text.length; j++){  
+                    text[j].ondblclick = function(){
+                        this.removeAttribute('readonly');
+                        this.style.textAlign = ('left');
+                        this.style.cursor = 'text';
+                    }
+                }
+                for(m = 0; m < text.length; m++){ 
+                    text[m].onfocus = function(){
+                            texta = this;
+                            document.onkeydown = function(en){
+                            if(en.keyCode === 13){
+                                if(!gr.test(texta.value)){
+                                    alert('内容不能为空');
+                                }
+                                else
+                                {
+                                    texta.readOnly = 'true';
+                                    texta.style.textAlign = ('center');
+                                    texta.style.cursor = 'default';
+                                }
+                            }
+                        }
+                    }
+                }
+                for(var l = 0; l < text.length; l++){  
+                    text[l].onblur = function(){
+                        textar = this;
+                        document.onkeydown = function(en){
+                            if(en.keyCode === 13){
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
